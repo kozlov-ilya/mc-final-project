@@ -19,7 +19,7 @@ const ProductPage = () => {
       {isPending && <Skeleton />}
       {product && (
         <div className={styles['Main']}>
-          <ProductGallery imgUrls={product.imgUrls} />
+          <ProductGallery product={product} className={styles['Gallery']} />
           <div className={styles['Content']}>
             <Text className={styles['Name']} view="heading">
               {product.name}
