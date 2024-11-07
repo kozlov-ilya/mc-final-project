@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import Button from 'components/Button';
 import Icon from 'components/Icon';
 import Text from 'components/Text';
@@ -14,10 +13,8 @@ const ProductCard: React.FC<ProductCardProps> = (props) => {
   const { product, ...rest } = props;
   const { name, price, imgUrls } = product;
 
-  const cn = classNames(styles['ProductCard']);
-
   return (
-    <div className={cn} {...rest}>
+    <div className={styles['ProductCard']} {...rest}>
       <div className={styles['Header']}>
         <ProductImage imgUrl={imgUrls[0]} width={300} height={350} />
       </div>

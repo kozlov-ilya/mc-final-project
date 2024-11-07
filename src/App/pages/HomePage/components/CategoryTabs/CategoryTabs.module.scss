@@ -8,13 +8,14 @@
   }
 }
 
-.TabButton {
-  min-width: 125px;
-}
-
 .FiltersButton {
   color: var(--color-text-primary);
   flex-shrink: 0;
+
+  @media screen and (width > #{$bp-sm-768}) {
+    flex-wrap: wrap;
+    order: 1;
+  }
 }
 
 .Viewport {

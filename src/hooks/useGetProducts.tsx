@@ -6,7 +6,7 @@ export const useGetProducts = () => {
     data: products,
     error,
     isPending,
-  } = useQuery({ queryKey: ['products', 'all'], queryFn: getAllProducts, staleTime: 100 * (60 * 1000) });
+  } = useQuery({ queryKey: ['products', 'all'], queryFn: getAllProducts, staleTime: 10 * (60 * 1000) });
 
   return { products, error, isPending };
 };

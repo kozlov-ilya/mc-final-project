@@ -10,7 +10,7 @@ export type ProductImageProps = React.ComponentPropsWithoutRef<'img'> & {
 const ProductImage: React.FC<ProductImageProps> = (props) => {
   const { imgUrl, radius, ...rest } = props;
 
-  const cn = classNames(styles['ProductImage'], { [styles[`ProductImage_radius_${radius}`]]: !!radius });
+  const cn = classNames(styles['ProductImage'], { [styles[`ProductImage_radius_${radius}`]]: radius });
 
   return <img className={cn} src={`${PRODUCT_IMAGES_BASE_PATH}${imgUrl}`} draggable={false} alt="product" {...rest} />;
 };

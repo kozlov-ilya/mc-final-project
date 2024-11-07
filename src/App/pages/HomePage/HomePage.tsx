@@ -1,24 +1,25 @@
-import { useSearchParams } from 'react-router-dom';
 import Skeleton from 'components/Skeleton';
-import { useGetCategoryProducts } from 'hooks';
+import { useGetCategoryProducts, useCurrentCategory } from 'hooks';
 import CategoryTabs from './components/CategoryTabs';
 import ProductList from './components/ProductList';
 import styles from './HomePage.module.scss';
 
 const HomePage = () => {
-  const [searchParams] = useSearchParams();
+  const { currentCategory } = useCurrentCategory();
 
-  const category = searchParams.get('category') || 'jackets';
-
-  const { products, isPending } = useGetCategoryProducts(category);
+  const { products, isPending } = useGetCategoryProducts(currentCategory);
 
   return (
-    <div className={'HomePage'}>
+    <div className={styles['HomePage']}>
       <div className={styles['CategoryTabsContainer']}>
         <CategoryTabs />
       </div>
       {isPending && <Skeleton />}
-      <div className={styles['ProductListContainer']}>{products && <ProductList products={products} />}</div>
+      {products && (
+        <div className={styles['ProductListContainer']}>
+          <ProductList products={products} />
+        </div>
+      )}
     </div>
   );
 };

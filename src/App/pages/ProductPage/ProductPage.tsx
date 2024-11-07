@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import { useParams } from 'react-router-dom';
 import Button from 'components/Button';
 import Skeleton from 'components/Skeleton';
@@ -12,10 +11,8 @@ const ProductPage = () => {
 
   const { product, isPending } = useGetProduct(id as string);
 
-  const cn = classNames(styles['ProductPage']);
-
   return (
-    <div className={cn}>
+    <div className={styles['ProductPage']}>
       {isPending && <Skeleton />}
       {product && (
         <div className={styles['Main']}>
