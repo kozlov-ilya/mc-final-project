@@ -2,6 +2,10 @@
   display: flex;
   gap: $space-8;
   justify-content: center;
+
+  @media screen and (width > #{$bp-sm-768}) {
+    flex-wrap: wrap;
+  }
 }
 
 .TabButton {
@@ -10,4 +14,14 @@
 
 .FiltersButton {
   color: var(--color-text-primary);
+  flex-shrink: 0;
+}
+
+.Viewport {
+  overflow: hidden;
+}
+
+.Container {
+  display: flex;
+  gap: $space-8;
 }

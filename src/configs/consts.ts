@@ -5,5 +5,7 @@ export const PRODUCT_IMAGES_BASE_PATH = '/images/products';
 export const categories = [
   { name: 'Куртки', value: 'jackets' },
   { name: 'Футболки', value: 'tshirts' },
+  { name: 'Брюки', value: 'bottoms' },
+  { name: 'Обувь', value: 'footwear' },
   { name: 'Аксесуары', value: 'accesories' },
 ];
